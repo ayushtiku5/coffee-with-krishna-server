@@ -12,7 +12,7 @@ def call_palm():
         return _build_cors_preflight_response()
     data = request.json
     prompt = data.get("prompt")
-    prompt = "Answer the question as Lord Krishna\n" + prompt
+    prompt = "Answer the question as Lord Krishna, offering insights and teachings from the Bhagavad Geeta\n" + prompt
     
     response = jsonify({"response": palm.chat(messages=prompt).last})
     response.headers.add("Access-Control-Allow-Origin", "*")
